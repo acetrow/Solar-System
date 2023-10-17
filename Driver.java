@@ -18,7 +18,12 @@ public class Driver
         int earth_moon = 270;
         int mars_moon = 45;
         int mars_moon2 = 225;
-        int jupiter_moon = 135;
+        int jupiter_moon = 55;
+        int jupiter_moon2 = 275;
+        int jupiter_moon3 = 127;
+        int jupiter_moon4 = 295;
+        int jupiter_moon5 = 90;
+        int jupiter_moon6 = 180;
         int saturn_moon = 360;
         int uranus_moon = 90;
         int neptune_moon = 225;
@@ -77,6 +82,25 @@ public class Driver
             //mars's moon 2
             a.drawSolarObjectAbout(25, mars_moon2, 5, "GREY", 321, mars);
             mars_moon2 = mars_moon2 + 4;
+
+            //jupiter's moon 1
+            a.drawSolarObjectAbout(45, jupiter_moon, 5, "GREY", 394, jupiter);
+            jupiter_moon = jupiter_moon + 3;
+            //jupiter's moon 2
+            a.drawSolarObjectAbout(45, jupiter_moon2, 5, "GREY", 394, jupiter);
+            jupiter_moon2 = jupiter_moon2 + 3;
+            //jupiter's moon 3
+            a.drawSolarObjectAbout(55, jupiter_moon3, 5, "GREY", 394, jupiter);
+            jupiter_moon3 = jupiter_moon3 + 4;
+            //jupiter's moon 4
+            a.drawSolarObjectAbout(55, jupiter_moon4, 5, "GREY", 394, jupiter);
+            jupiter_moon4 = jupiter_moon4 + 4;
+            //jupiter's moon 5
+            a.drawSolarObjectAbout(65, jupiter_moon5, 5, "GREY", 394, jupiter);
+            jupiter_moon5 = jupiter_moon5 + 5;
+            //jupiter's moon 6
+            a.drawSolarObjectAbout(65, jupiter_moon6, 5, "GREY", 394, jupiter);
+            jupiter_moon6 = jupiter_moon6 + 5;
 
 
 
