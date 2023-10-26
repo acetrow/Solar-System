@@ -1,113 +1,66 @@
-public class Driver
+public class Driver 
 {
     public static void main(String[] args) 
     {
-        SolarSystem a = new SolarSystem(1700, 1050);
+        SolarSystem solarSystem = new SolarSystem(1050, 1050);
 
-        //angle of rotation of planets 
-        int mercury = 180;
-        int venus = 315;
-        int earth = 270;
-        int mars = 45;
-        int jupiter = 135;
-        int saturn = 360;
-        int uranus = 90;
-        int neptune = 225;
+        Sun sun_flare = new Sun(0, 0, 175, "#FDB813");
+        Sun sun = new Sun(0, 0, 150, "#ff0000");
         
-        //angle of rotation of planets' moons 
-        int earth_moon = 270;
-        int mars_moon = 45;
-        int mars_moon2 = 225;
-        int jupiter_moon = 55;
-        int jupiter_moon2 = 275;
-        int jupiter_moon3 = 127;
-        int jupiter_moon4 = 295;
-        int jupiter_moon5 = 90;
-        int jupiter_moon6 = 180;
-        int saturn_moon = 360;
-        int uranus_moon = 90;
-        int neptune_moon = 225;
-        
-        while (true)
-        {
-            //sun's flare
-            a.drawSolarObject(0, 0, 175, "#FDB813");
-            //sun
-            a.drawSolarObject(0, 0, 150, "#ff0000");
+        Planet mercury = new Planet(115, 180, 15, "#966919", 0, 0);
+        Planet2 venus = new Planet2(145, 315, 32, "#c9b037", 0 ,0);
+        Planet earth = new Planet(201, 270, 35, "#465A3D", 0 ,0);
+        Planet mars = new Planet(241, 45, 20, "#800000", 0 ,0);
+        Planet2 jupiter = new Planet2(305, 135, 55, "#e3dccb", 0, 0);
+        Planet2 saturn = new Planet2(359, 360, 40, "#b5651d", 0, 0);
+        Planet uranus = new Planet(411, 90, 30, "#ADD8E6", 0, 0);
+        Planet2 neptune = new Planet2(450, 225, 25, "#00008B", 0, 0);
 
-            //mercury
-            a.drawSolarObjectAbout(125, mercury, 15, "#966919", 0, 0);
-            mercury = mercury + 2;
+        Moon earthMoon = new Moon(30, 270, 2, "GREY", earth.distance, earth.angle);
+        Moon marsMoon1 = new Moon(20, 45, 2, "GREY", mars.distance, mars.angle);
+        Moon marsMoon2 = new Moon(15, 225, 2, "GREY", mars.distance, mars.angle);
 
-            //venus
-            a.drawSolarObjectAbout(183, venus, 37, "#c9b037", 0, 0);
-            venus = venus + 2;
+        Comet[] comets = new Comet[144];
 
-            //earth
-            a.drawSolarObjectAbout(251, earth, 40, "#465A3D", 0, 0);
-            earth++;
-
-            //mars
-            a.drawSolarObjectAbout(321, mars, 25, "#800000", 0, 0);
-            mars++;
-
-            //jupiter
-            a.drawSolarObjectAbout(394, jupiter, 70, "#e3dccb", 0, 0);
-            jupiter++;
-
-            //saturn's ring
-            a.drawSolarObjectAbout(479, saturn, 60, "WHITE", 0, 0);
-            
-            //saturn
-            a.drawSolarObjectAbout(479, saturn, 55, "#b5651d", 0, 0);
-            saturn++;
-
-            //uranus
-            a.drawSolarObjectAbout(559, uranus, 35, "#ADD8E6", 0, 0);
-            uranus++;
-            
-            //neptune
-            a.drawSolarObjectAbout(617, neptune, 30, "#00008B", 0, 0);
-            neptune++;
-
-            
-            //earth's moon
-            a.drawSolarObjectAbout(30, earth_moon, 5, "GREY", 251, earth);
-            earth_moon= earth_moon + 3;
-
-             
-            //mars's moon 1
-            a.drawSolarObjectAbout(35, mars_moon, 5, "GREY", 321, mars);
-            mars_moon = mars_moon + 3;
-            //mars's moon 2
-            a.drawSolarObjectAbout(25, mars_moon2, 5, "GREY", 321, mars);
-            mars_moon2 = mars_moon2 + 4;
-
-            //jupiter's moon 1
-            a.drawSolarObjectAbout(45, jupiter_moon, 5, "GREY", 394, jupiter);
-            jupiter_moon = jupiter_moon + 3;
-            //jupiter's moon 2
-            a.drawSolarObjectAbout(45, jupiter_moon2, 5, "GREY", 394, jupiter);
-            jupiter_moon2 = jupiter_moon2 + 3;
-            //jupiter's moon 3
-            a.drawSolarObjectAbout(55, jupiter_moon3, 5, "GREY", 394, jupiter);
-            jupiter_moon3 = jupiter_moon3 + 4;
-            //jupiter's moon 4
-            a.drawSolarObjectAbout(55, jupiter_moon4, 5, "GREY", 394, jupiter);
-            jupiter_moon4 = jupiter_moon4 + 4;
-            //jupiter's moon 5
-            a.drawSolarObjectAbout(65, jupiter_moon5, 5, "GREY", 394, jupiter);
-            jupiter_moon5 = jupiter_moon5 + 5;
-            //jupiter's moon 6
-            a.drawSolarObjectAbout(65, jupiter_moon6, 5, "GREY", 394, jupiter);
-            jupiter_moon6 = jupiter_moon6 + 5;
-
-
-
-            a.finishedDrawing();
-            
+        int k = 0;
+        for (int i = 0; i < 72; i++) {
+            comets[i] = new Comet(265, k, 1, "WHITE", 0, 0);
+            k = k+5;
+        }
+        double j = 2.5;
+        for (int i = 72; i < 144; i++) {
+            comets[i] = new Comet(270, j, 1, "WHITE", 0, 0);
+            j = j+5;
         }
         
-    }
+        while (true) 
+        {
+            //sun 
+            sun_flare.draw(solarSystem);
+            sun.draw(solarSystem);
+            
+            //Planet 
+            mercury.draw(solarSystem);
+            venus.draw(solarSystem);
+            earth.draw(solarSystem);
+            mars.draw(solarSystem);
+            jupiter.draw(solarSystem);
+            saturn.draw(solarSystem);
+            uranus.draw(solarSystem);
+            neptune.draw(solarSystem);
 
+            //Moon 
+            earthMoon.draw(solarSystem);
+            marsMoon1.draw(solarSystem);
+            marsMoon2.draw(solarSystem);  
+
+            //Comet
+            for (int i = 0; i < 144; i++) 
+            {
+                comets[i].draw(solarSystem);
+            }
+            
+            solarSystem.finishedDrawing();
+        }
+    }
 }
