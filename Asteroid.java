@@ -9,7 +9,7 @@ public class Asteroid extends Planet
     {
 
         solarSystem.drawSolarObjectAbout(distance, angle, diameter, col, centreOfRotationDistance, centreOfRotationAngle);
-        angle = angle+2;
+        angle= angle+2;
  
 
     }
