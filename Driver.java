@@ -1,5 +1,13 @@
+/**
+ * Represents the main driver class for the solar system simulation.
+ */
 public class Driver 
 {
+    /**
+     * Main method to create and simulate the solar system.
+     *
+     * @param args Command line arguments (not used in this context).
+     */
     public static void main(String[] args) 
     {
         SolarSystem solarSystem = new SolarSystem(1050, 1050);
